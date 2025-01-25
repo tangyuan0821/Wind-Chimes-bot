@@ -1,6 +1,6 @@
 # ~/Wind Chimes-bot/scripts/archive_inactive_discussions.py
 import pywikibot
-from datetime import datetime, timedelta
+from datetime import datetime
 import os
 
 # 设置自定义配置文件的路径
@@ -9,10 +9,12 @@ password_path = os.path.expanduser('~/Wind Chimes-bot/config/user-password.py')
 family_path = os.path.expanduser('~/Wind Chimes-bot/families')
 
 # 加载自定义配置文件
-pywikibot.config.execute(config_path)
+with open(config_path, encoding='utf-8') as config_file:
+    exec(config_file.read())
 
 # 加载用户名和密码
-pywikibot.config.usernames.update(pywikibot.UserPasswordManager(password_path).load())
+with open(password_path, encoding='utf-8') as password_file:
+    exec(password_file.read())
 
 # 加载自定义 family 文件夹
 pywikibot.config.family_files.append(family_path)
