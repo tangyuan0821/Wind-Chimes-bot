@@ -3,6 +3,7 @@ import pywikibot
 from datetime import datetime
 import os
 
+
 # 设置自定义配置文件的路径
 config_path = os.path.expanduser('~/Wind Chimes-bot/config/user-config.py')
 password_path = os.path.expanduser('~/Wind Chimes-bot/config/user-password.py')
