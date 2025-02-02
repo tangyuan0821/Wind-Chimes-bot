@@ -17,7 +17,7 @@ pywikibot.site._families['miraheze'] = MirahezeFamily()
 
 
 # 配置站点
-site = pywikibot.Site()
+site = pywikibot.Site(family='miraheze', code='zhwpwiki')
 
 # 登录
 site.login('Wind Chimes-bot', 'MHM1008BOT')
