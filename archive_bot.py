@@ -5,6 +5,8 @@ import os
 username = os.getenv('WIKI_USERNAME')
 password = os.getenv('WIKI_PASSWORD')
 
+print(f"用户名：{username}")  # 确保用户名环境变量传递正确
+
 if not username or not password:
     raise ValueError("缺少用户名或密码，请检查 GitHub Secrets 设置")
 
