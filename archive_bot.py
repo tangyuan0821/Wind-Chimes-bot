@@ -11,8 +11,7 @@ if not username or not password:
 
 
 # 配置站点
-site = pywikibot.Site(url="https://zhwpwiki.miraheze.org")
-site.login("username","password")
+site = pywikibot.Site('zhwpwiki', 'zhwpwiki')
 # 需要存档的页面列表
 pages_to_archive = [
     'zhwpwiki_talk:茶馆',
