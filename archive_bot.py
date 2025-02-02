@@ -1,12 +1,18 @@
 import pywikibot
 import datetime
 import os
-from miraheze_family import MirahezeFamily  # 导入自定义的 Family 类
+import dateutil.parser
+import pytz
+import logging
+import time
 
+# 引入自定义家族
+import custom_family
 
 
 username = os.getenv('WIKI_USERNAME')
 password = os.getenv('WIKI_PASSWORD')
+wiki_url = 'zhwpwiki.miraheze.org'
 
 print(f"用户名：{username}")  # 确保用户名环境变量传递正确
 
@@ -17,11 +23,10 @@ if not username or not password:
 #pywikibot.site._families['miraheze'] = MirahezeFamily()
 
 
-# 配置站点
-site = pywikibot.Site('zhwpwiki','miraheze')
 
-# 登录
-site.login()
+site = custom_family.Family().site('zhwpwiki')
+site.login(username, password)
+logger.info(f"登录成功！当前用户：{site.username}")
 # 需要存档的页面列表
 pages_to_archive = [
     'zhwpwiki_talk:茶馆',
