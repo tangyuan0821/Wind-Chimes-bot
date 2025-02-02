@@ -55,6 +55,7 @@ def archive_page(page_name):
 
 # 主函数部分，确保调用正常
 def main():
+    global logger
     logger.info("开始存档任务...")
     for page_name in pages_to_archive:
         archive_page(page_name)
