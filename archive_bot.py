@@ -13,11 +13,11 @@ WIKI_URL = 'zhwpwiki.miraheze.org'
 PAGES_TO_WATCH = [
     'Zhwpwiki talk:管理员告示板',
     'Zhwpwiki talk:权限申请',
-    'Zhwpwiki Talk:茶馆'
+    'Zhwpwiki talk:茶馆'
 ]
 ARCHIVE_DAYS = 7  # 默认存档时间
 SPECIAL_RULES = {
-    'Zhwpwiki Talk:茶馆': {
+    'Zhwpwiki talk:茶馆': {
         'archive_days': 30,  # 茶馆30天存档
         'archive_path': '历史记录'  # 茶馆使用不同的存档路径
     }

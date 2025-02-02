@@ -28,19 +28,3 @@ jobs:
         WIKI_PASSWORD: ${{ secrets.WIKI_PASSWORD }}
       run: |
         python archive_bot.py
-        # 创建日志目录
-        mkdir -p logs
-        
-        # 修改代码中的用户名密码引用方式
-        sed -i "s/USERNAME = '.*'/USERNAME = os.environ['WIKI_USERNAME']/" archive_bot.py
-        sed -i "s/PASSWORD = '.*'/PASSWORD = os.environ['WIKI_PASSWORD']/" archive_bot.py
-        
-        # 运行脚本
-        python archive_bot.py
-
-    - name: Upload logs
-      uses: actions/upload-artifact@v3
-      if: always()
-      with:
-        name: archive-logs
-        path: logs/
