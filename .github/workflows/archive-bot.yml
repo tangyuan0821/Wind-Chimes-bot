@@ -1,32 +1,31 @@
-name: Archive Bot Workflow
+name: Archive Bot
 
-# 允许手动触发
 on:
-  workflow_dispatch:  # 手动触发
   schedule:
-    - cron: '0 0 * * *'  # 每天 0 点 UTC 时间运行
+    # 每天运行一次，且只在整点时执行
+    - cron: "0 0 * * *"
+  workflow_dispatch: # 手动触发工作流（如果需要）
 
 jobs:
-  archive_job:
+  archive:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.9
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.x
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install mwclient python-dateutil pytz
+    - name: Install dependencies
+      run: |
+        pip install pywikibot
 
-      - name: Run Archive Bot
-        env:
-          WIKI_USERNAME: ${{ secrets.WIKI_USERNAME }}
-          WIKI_PASSWORD: ${{ secrets.WIKI_PASSWORD }}
-        run: |
-          python archive_bot.py
+    - name: Run the bot
+      env:
+        USERNAME: ${{ secrets.WIKI_USERNAME }}
+        PASSWORD: ${{ secrets.WIKI_PASSWORD }}
+      run: |
+        python archive_bot.py
