@@ -29,4 +29,4 @@ jobs:
           WIKI_USERNAME: ${{ secrets.WIKI_USERNAME }}
           WIKI_PASSWORD: ${{ secrets.WIKI_PASSWORD }}
         run: |
-          python Wind-Chimes-bot/archive_bot.py
+          python archive_bot.py
