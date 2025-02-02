@@ -18,7 +18,7 @@ if not username or not password:
 
 
 # 配置站点
-site = pywikibot.Site(family='miraheze', code='zhwpwiki')
+site = pywikibot.Site('zhwpwiki','miraheze')
 
 # 登录
 site.login('Wind Chimes-bot', 'MHM1008BOT')
