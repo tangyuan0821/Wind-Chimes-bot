@@ -21,7 +21,7 @@ if not username or not password:
 site = pywikibot.Site('zhwpwiki','miraheze')
 
 # 登录
-site.login('Wind Chimes-bot', 'MHM1008BOT')
+site.login()
 # 需要存档的页面列表
 pages_to_archive = [
     'zhwpwiki_talk:茶馆',

@@ -1,10 +1,4 @@
-# 配置你的站点（zhwpwiki），直接指定站点URL和语言
+# user-config.py
+mylang = 'zhwpwiki'
 family = 'miraheze'
-lang = 'zhwpwiki'
-
-# 用户名配置
-usernames = {
-    'zhwpwiki': {
-            'miraheze': 'Wind Chimes-bot',
-                },
-                }
+usernames['miraheze']['zhwpwiki'] = 'Wind Chimes-bot'  # 在此处替换为你的用户名
