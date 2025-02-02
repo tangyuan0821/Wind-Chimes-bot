@@ -5,6 +5,6 @@ lang = 'zhwpwiki'
 # 用户名配置
 usernames = {
     'zhwpwiki': {
-            'zhwpwiki': 'Wind Chimes-bot',
+            'miraheze': 'Wind Chimes-bot',
                 },
                 }
