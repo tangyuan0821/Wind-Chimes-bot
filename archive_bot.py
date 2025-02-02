@@ -53,10 +53,13 @@ def archive_page(page_name):
     else:
         print(f"存档页面 {archive_title} 已存在，跳过存档.")
 
+# 主函数部分，确保调用正常
 def main():
+    logger.info("开始存档任务...")
     for page_name in pages_to_archive:
-        print(f"开始存档 {page_name} ...")
         archive_page(page_name)
+    logger.info("存档任务完成")
+
 
 if __name__ == '__main__':
     main()
