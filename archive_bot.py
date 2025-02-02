@@ -1,6 +1,9 @@
 import pywikibot
 import datetime
 import os
+from miraheze_family import MirahezeFamily  # 导入自定义的 Family 类
+
+
 
 username = os.getenv('WIKI_USERNAME')
 password = os.getenv('WIKI_PASSWORD')
@@ -8,6 +11,9 @@ print(f"用户名：{username}")  # 确保用户名环境变量传递正确
 
 if not username or not password:
     raise ValueError("缺少用户名或密码，请检查 GitHub Secrets 设置")
+
+# 手动注册自定义的 Family
+pywikibot.site._families['miraheze'] = MirahezeFamily()
 
 
 # 配置站点
