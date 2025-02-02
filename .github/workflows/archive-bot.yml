@@ -27,8 +27,8 @@ jobs:
 
     - name: Run the bot
       env:
-        USERNAME: ${{ secrets.WIKI_USERNAME }}
-        PASSWORD: ${{ secrets.WIKI_PASSWORD }}
+        WIKI_USERNAME: ${{ secrets.WIKI_USERNAME }}
+        WIKI_PASSWORD: ${{ secrets.WIKI_PASSWORD }}
       run: |
         set -x  # 启用调试输出
         python archive_bot.py

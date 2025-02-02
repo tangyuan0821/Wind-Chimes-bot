@@ -4,7 +4,6 @@ import os
 
 username = os.getenv('WIKI_USERNAME')
 password = os.getenv('WIKI_PASSWORD')
-
 print(f"用户名：{username}")  # 确保用户名环境变量传递正确
 
 if not username or not password:
@@ -12,7 +11,7 @@ if not username or not password:
 
 
 # 配置站点
-site = pywikibot.Site('zhwpwiki', 'zhwpwiki')
+site = pywikibot.Site(url="https://zhwpwiki.miraheze.org")
 
 # 需要存档的页面列表
 pages_to_archive = [
