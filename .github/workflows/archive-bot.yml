@@ -24,7 +24,7 @@ jobs:
         set -x  # 启用调试输出
         pip install --upgrade pip
         pip install pywikibot
-        python-dateutil
+        pip install python-dateutil
 
     - name: Run the bot
       env:
