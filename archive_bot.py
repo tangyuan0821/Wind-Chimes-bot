@@ -24,9 +24,9 @@ if not username or not password:
 
 
 
-site = custom_family.Family().site('zhwpwiki')
-site.login(username, password)
-logger.info(f"登录成功！当前用户：{site.username}")
+#site = custom_family.Family().site('zhwpwiki')
+#site.login(username, password)
+#logger.info(f"登录成功！当前用户：{site.username}")
 # 需要存档的页面列表
 pages_to_archive = [
     'zhwpwiki_talk:茶馆',
@@ -58,3 +58,24 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+# 创建日志目录（如果不存在）
+if not os.path.exists(LOG_DIR):
+    os.makedirs(LOG_DIR)
+
+# 配置日志系统
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler(LOG_FILE),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger(__name__)
+
+# 初始化Wiki连接
+site = mwclient.Site(wiki_url, path='/w/')  # 修改这里
+site.login(username, password)
+logger.info(f"登录成功！当前用户：{site.username}")
+
