@@ -13,15 +13,15 @@ class Config:
         self.PASSWORD = os.environ.get('WIKI_PASSWORD')
         self.WIKI_URL = 'zhwpwiki.miraheze.org'
         self.PAGES_TO_WATCH = [
-            'Zhwpwiki talk:管理员告示板',
-            'Zhwpwiki talk:权限申请',
-            'Zhwpwiki talk:茶馆'
+            'Zhwpwiki_talk:管理员告示板',
+            'Zhwpwiki_talk:权限申请',
+            'Zhwpwiki_talk:茶馆'
         ]
         self.ARCHIVE_DAYS = 7  # 默认存档时间
         self.SPECIAL_RULES = {
             'Zhwpwiki talk:茶馆': {
                 'archive_days': 30,  # 茶馆30天存档
-                'archive_path': '历史记录'  # 茶馆使用不同的存档路径
+                'archive_path': '存档/2025'  # 茶馆使用不同的存档路径
             }
         }
         self.LOG_DIR = 'logs'  # 日志文件目录
@@ -81,7 +81,7 @@ class Utils:
             return special_rules[page_title]
         return {
             'archive_days': default_days,
-            'archive_path': '存档'
+            'archive_path': '存档/2025'
         }
 
 # 主程序类，负责处理存档任务
