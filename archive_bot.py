@@ -11,7 +11,7 @@ if not username or not password:
 
 
 # 配置站点
-site = pywikibot.Site(family='miraheze', code='zhwpwiki')
+site = pywikibot.Site()
 
 # 登录
 site.login('username', 'password')
