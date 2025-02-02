@@ -13,4 +13,4 @@ class MirahezeFamily(family.Family):
         cls.languages = cls.langs
 
 # 将该 family 注册到 pywikibot 中
-pywikibot.site._families['miraheze'] = MirahezeFamily()
+#pywikibot.site._families['miraheze'] = MirahezeFamily()
