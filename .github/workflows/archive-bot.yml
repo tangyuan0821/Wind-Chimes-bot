@@ -25,6 +25,9 @@ jobs:
         pip install --upgrade pip
         pip install pywikibot
         pip install python-dateutil
+        pip install pytz
+        pip install logging
+        
 
     - name: Run the bot
       env:
