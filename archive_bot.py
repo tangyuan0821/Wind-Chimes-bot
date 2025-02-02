@@ -14,7 +14,7 @@ if not username or not password:
     raise ValueError("缺少用户名或密码，请检查 GitHub Secrets 设置")
 
 # 手动注册自定义的 Family
-pywikibot.site._families['miraheze'] = MirahezeFamily()
+#pywikibot.site._families['miraheze'] = MirahezeFamily()
 
 
 # 配置站点
