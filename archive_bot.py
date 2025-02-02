@@ -1,4 +1,4 @@
-import pywikibot
+import mwclient
 import datetime
 import os
 import dateutil.parser
