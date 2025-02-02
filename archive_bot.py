@@ -7,6 +7,7 @@ from miraheze_family import MirahezeFamily  # 导入自定义的 Family 类
 
 username = os.getenv('WIKI_USERNAME')
 password = os.getenv('WIKI_PASSWORD')
+
 print(f"用户名：{username}")  # 确保用户名环境变量传递正确
 
 if not username or not password:
