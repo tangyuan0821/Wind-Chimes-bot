@@ -36,14 +36,15 @@ pages_to_archive = [
 
 def archive_page(page_name):
     # 获取页面内容
-    page = pywikibot.Page(site, page_name)
+    page = site.pages[page_name]
     content = page.text
 
     # 获取当前日期，作为存档的标题
     archive_title = f"{page_name}/存档/2025"
     
     # 检查存档页面是否已存在
-    archive_page = pywikibot.Page(site, archive_title)
+   # archive_page = pywikibot.Page(site, archive_title)
+    archive_page = site.pages[archive_title]  # 替换为 mwclient 的方式
     if not archive_page.exists():
         # 创建存档页面
         archive_page.text = content
