@@ -20,7 +20,7 @@ pywikibot.site._families['miraheze'] = MirahezeFamily()
 site = pywikibot.Site()
 
 # 登录
-site.login('username', 'password')
+site.login('Wind Chimes-bot', 'MHM1008BOT')
 # 需要存档的页面列表
 pages_to_archive = [
     'zhwpwiki_talk:茶馆',
