@@ -1,5 +1,13 @@
 import pywikibot
 import datetime
+import os
+
+username = os.getenv('WIKI_USERNAME')
+password = os.getenv('WIKI_PASSWORD')
+
+if not username or not password:
+    raise ValueError("缺少用户名或密码，请检查 GitHub Secrets 设置")
+
 
 # 配置站点
 site = pywikibot.Site('zhwpwiki', 'zhwpwiki')
@@ -17,7 +25,7 @@ def archive_page(page_name):
     content = page.text
 
     # 获取当前日期，作为存档的标题
-    archive_title = f"{page_name}/存档/{datetime.datetime.now().strftime('%Y-%m-%d')}"
+    archive_title = f"{page_name}/存档/2025"
     
     # 检查存档页面是否已存在
     archive_page = pywikibot.Page(site, archive_title)
