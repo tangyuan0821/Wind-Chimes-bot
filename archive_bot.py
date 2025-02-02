@@ -35,6 +35,7 @@ pages_to_archive = [
 ]
 
 def archive_page(page_name):
+    global site
     # 获取页面内容
     page = site.pages[page_name]
     content = page.text
